@@ -7,6 +7,7 @@ BINDIR = /usr/bin
 
 FILES = $$(find -mindepth 2 -type f -name "customizeChroot")
 DIRS = 	jwm \
+		minimal \
 		openbox \
 		plasma \
 		xfce4
