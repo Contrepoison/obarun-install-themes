@@ -56,16 +56,16 @@ config_s6(){
 	
 	out_action "Enable syslogds6 service"
 	cp -ra /etc/s6-serv/available/classic/syslogds6 /etc/s6-serv/enabled/classic/
-	out_action "Enable dbus service"
-	cp -ra /etc/s6-serv/available/classic/dbus /etc/s6-serv/enabled/classic/
+	out_action "Enable dhcpd service"
+	cp -ra /etc/s6-serv/available/classic/dhcpcd /etc/s6-serv/enabled/classic/
 	
-	out_action "Create Live database"
-	s6opts add live bundle-Connman bundle-Wpa-supplicant
-	s6opts compile Live live	
+	#out_action "Create Live database"
+	#s6opts add live bundle-Connman bundle-Wpa-supplicant
+	#s6opts compile Live live	
 	
-	out_action "Make Live as current database"
-	rm /etc/s6-serv/enabled/rc/compiled/current
-	ln -sf /etc/s6-serv/enabled/rc/compiled/Live /etc/s6-serv/enabled/rc/compiled/current
+	#out_action "Make Live as current database"
+	#rm /etc/s6-serv/enabled/rc/compiled/current
+	#ln -sf /etc/s6-serv/enabled/rc/compiled/Live /etc/s6-serv/enabled/rc/compiled/current
 	
 	## out_action "Create directories for user supervision tree"
 	## su "${NEWUSER}" -c "s6opts user"
