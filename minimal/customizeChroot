@@ -1,4 +1,4 @@
-#!@BINDIR@/bash
+#!/usr/bin/bash
 # Copyright (c) 2015-2017 Eric Vidal <eric@obarun.org>
 # All rights reserved.
 # 
@@ -44,7 +44,6 @@ custo_once() {
 
 ############################## only modifie this script after this line ############################
 
-
 create_log_user(){
 	out_action "add ${NEWUSER} at log group"
 	gpasswd -a "$NEWUSER" log
@@ -61,28 +60,33 @@ config_s6(){
 	cp -ra /etc/s6-serv/available/classic/dbus /etc/s6-serv/enabled/classic/
 	
 	out_action "Create Live database"
-	s6opts add live bundle-Networkmanager
+	s6opts add live bundle-Connman bundle-Wpa-supplicant
 	s6opts compile Live live	
 	
 	out_action "Make Live as current database"
 	rm /etc/s6-serv/enabled/rc/compiled/current
 	ln -sf /etc/s6-serv/enabled/rc/compiled/Live /etc/s6-serv/enabled/rc/compiled/current
 	
-	out_action "Create directories for user supervision tree"
-	su "${NEWUSER}" -c "s6opts user"
-	out_action "Enable dbus service for ${NEWUSER} user"
-	su "${NEWUSER}" -c "cp -ra /etc/s6-serv/available/user/classic/dbus /home/${NEWUSER}/service/enabled/classic/"
-	out_action "Create ${NEWUSER} log directory for dbus"
-	su "${NEWUSER}" -c "s6opts checklog dbus"
+	## out_action "Create directories for user supervision tree"
+	## su "${NEWUSER}" -c "s6opts user"
+	## out_action "Enable dbus service for ${NEWUSER} user"
+	## su "${NEWUSER}" -c "cp -ra /etc/s6-serv/available/user/classic/dbus /home/${NEWUSER}/service/enabled/classic/"
+	## out_action "Create ${NEWUSER} log directory for dbus"
+	## su "${NEWUSER}" -c "s6opts checklog dbus"
 }
 custo_once config_s6
 
+# remove 30-dbus.sh to avoid conflict with dbus-s6serv conflicts
+## dbus_launch(){
+## 	rm /etc/X11/xinit/xinitrc.d/30-dbus.sh
+## }
+## dbus_launch
 
-##      Configure pulseaudio
-
-config_pulse(){
-	echo "load-module module-device-manager" >> /etc/pulse/default.pa
+# fix dbus bugs about network permissions
+connman_bug(){
+	sed -i "s:<deny:<allow:g" /etc/dbus-1/system.d/connman-nmcompat.conf
 }
-custo_once config_pulse
+custo_once connman_bug
 
 out_valid "Customization terminate"
+

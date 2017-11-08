@@ -1,0 +1,32 @@
+[Default Applications]
+inode/directory=spacefm-folder-handler.desktop;
+application/xml=geany.desktop;
+image/svg+xml=geeqie.desktop;
+text/plain=geany-usercreated-0.desktop;
+application/octet-stream=geany.desktop;
+image/vnd.microsoft.icon=geeqie-usercreated-0.desktop;
+application/x-php=geany.desktop;
+image/jpeg=gimp.desktop;
+text/html=geany-usercreated-1.desktop;
+text/x-log=geany-usercreated-2.desktop;
+application/x-compressed-tar=xarchiver.desktop;
+application/x-xz-compressed-tar=xarchiver-usercreated-0.desktop;
+text/x-csrc=geany-usercreated-3.desktop;
+
+[Added Associations]
+inode/directory=spacefm-folder-handler.desktop;
+application/xml=geany.desktop;
+image/svg+xml=geeqie.desktop;
+text/plain=geany-usercreated-0.desktop;
+application/octet-stream=geany.desktop;
+image/vnd.microsoft.icon=geeqie-usercreated-0.desktop;
+application/x-php=bluefish.desktop;
+image/jpeg=gimp.desktop;
+text/html=geany-usercreated-1.desktop;
+text/x-log=geany-usercreated-2.desktop;
+application/x-compressed-tar=xarchiver.desktop;
+application/x-xz-compressed-tar=xarchiver-usercreated-0.desktop;
+text/x-csrc=geany-usercreated-3.desktop;
+
+[Removed Associations]
+text/plain=sudo-usercreated-0.desktop;

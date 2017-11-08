@@ -1,0 +1,10 @@
+######One application per line, you can use # to comment a line, blank line are ignored
+
+
+dhcpcd-s6rcserv
+connmand-s6rcserv
+dmraid-s6rcserv
+nfs-utils-s6rcserv
+wpa-supplicant-s6rcserv
+syslogds6-s6serv
+

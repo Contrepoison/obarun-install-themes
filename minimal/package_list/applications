@@ -1,0 +1,9 @@
+######One application per line, you can use # to comment a line, blank line are ignored
+
+##				applications
+
+connman
+udevil 
+unrar 
+unzip 
+p7zip

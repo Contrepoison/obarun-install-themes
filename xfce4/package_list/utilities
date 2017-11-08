@@ -26,6 +26,8 @@ elinks
 git
 haveged
 libatasmart
+#libbsd included for compatibility with MAC
+libbsd
 libinput
 libpulse
 libcups

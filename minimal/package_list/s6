@@ -1,0 +1,23 @@
+######One application per line, you can use # to comment a line, blank line are ignored
+
+##				init system 
+
+s6
+s6-linux-utils
+s6-portable-utils
+s6-rc
+s6-boot
+skalibs
+execline
+s6opts
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

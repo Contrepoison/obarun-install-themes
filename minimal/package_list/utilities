@@ -4,68 +4,39 @@
 
 syslinux
 gptfdisk
-grub
+
+##				console browser
+
+#elinks
+#lynx
+#w3m
 
 ##				utilities
 
-alsa-lib 
-alsa-plugins 
-alsa-tools 
-alsa-utils 
-arandr 
-arch-install-scripts
 btrfs-progs 
-colord
 crda
-consolekit2
-dbus
-ddrescue
 dmraid
 dosfstools 
-elinks 
 git
-haveged
-libatasmart
-#libbsd included for compatibility with MAC
-libbsd
 libinput
-libpulse
-libcups
 libsynaptics
 libwacom
 nfs-utils
 ntfs-3g
-numlockx 
 parted 
 perl-file-mimeinfo 
-polkit
 python
 refind-efi
-rtkit
 udisks2
-upower
 usb_modeswitch
 wget 
 wireless_tools 
 wpa_supplicant
-wvdial
-xdg-utils 
-xorg-xkill
 zd1211-firmware
 
 ##			obarun stuff
 
-obarun-install
-obarun-install-themes
 pacopts
 obarun-keyring
 obarun-zsh
 
-## 			codec
-
-gstreamer
-gst-libav
-gst-plugins-bad
-gst-plugins-base
-gst-plugins-good
-gst-plugins-ugly
